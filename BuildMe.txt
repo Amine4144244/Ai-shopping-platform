@@ -1,0 +1,287 @@
+You are a senior full-stack engineer + AI agent architect.
+Your task is to design and implement a complete AI-powered shopping platform with a modern UI, a scalable backend, and an AI agent that acts as a personal shopping assistant.
+
+The output must be production-quality code, clean architecture, and clear separation of concerns.
+
+I am providing:
+
+Stitch-generated HTML files (visual reference only), image assets (must be reused) in the folders (ai_shopping_assistant, landing_page, login_page, product_comparison, product_details, product_listing, register_page, user_account)
+
+Requirements:
+
+Treat HTML as a design reference, not production code
+
+Rebuild UI as React components using Tailwind CSS
+
+Extract reusable components (Navbar, ProductCard, CategoryCard, ChatUI, etc.)
+
+Preserve spacing, colors, layout, and responsiveness
+
+Do not copy inline styles
+
+Do not keep duplicated markup
+
+Use semantic JSX and clean component structure
+
+1️⃣ Project Overview
+
+Build an AI Shopping Platform where users can:
+
+Browse products by category
+
+Search products
+
+Chat with an AI shopping assistant
+
+Receive personalized recommendations
+
+View AI explanations for recommendations
+
+Authenticate (register/login/logout)
+
+Save chat history
+
+Use the platform in English only
+
+The system must be full-stack, AI-powered, and extensible.
+
+2️⃣ Tech Stack (Strict)
+Frontend
+
+React (Vite)
+
+Tailwind CSS
+
+React Router
+
+Zustand or Context API (state)
+
+Fetch or Axios
+
+Dark / Light mode (toggle button)
+
+Responsive, modern UI
+
+Backend
+
+Node.js + Express.js
+
+MongoDB + Mongoose
+
+JWT authentication stored in httpOnly cookies
+
+REST API (no GraphQL)
+
+Rate limiting (AI routes only)
+
+No Docker
+
+AI Agent
+
+Python
+
+FastAPI
+
+Single AI agent responsible for:
+
+Product recommendations
+
+Natural language explanations
+
+Budget-based filtering
+
+Preference understanding
+
+Uses Groq API for LLM access
+
+AI logic in agent.py
+
+FastAPI server in app.py
+
+Backend communicates with AI agent via HTTP
+
+3️⃣ System Architecture (Mandatory)
+Frontend (React)
+   ↓
+Backend API (Express)
+   ↓
+AI Service (FastAPI)
+   ↓
+Groq LLM
+
+Frontend NEVER talks directly to AI
+
+Backend acts as secure proxy
+
+AI agent is stateless
+
+MongoDB stores users, products, chats
+
+4️⃣ Core Pages (Frontend)
+
+You must build all these pages:
+
+Landing Page
+
+Hero section
+
+Feature highlights
+
+Call to action
+
+Auth Pages
+
+Register
+
+Login
+
+Home / Marketplace
+
+Category section
+
+Featured products
+
+Search bar
+
+Product List Page
+
+Filter by category
+
+Sort by price / rating
+
+Product Details Page
+
+Product info
+
+“Ask AI about this product” button
+
+AI Assistant Page
+
+Chat UI
+
+User messages
+
+AI responses with reasoning
+
+Profile Page
+
+User info
+
+Logout
+
+5️⃣ Backend API Design
+Auth
+POST   /api/auth/register
+POST   /api/auth/login
+POST   /api/auth/logout
+GET    /api/auth/me
+Products
+GET    /api/products
+GET    /api/products/:id
+GET    /api/categories
+AI
+POST   /api/ai/chat
+POST   /api/ai/recommend
+Chats
+GET    /api/chats
+POST   /api/chats
+GET    /api/chats/:id
+6️⃣ Database Models (MongoDB)
+User
+
+email
+
+password (bcrypt)
+
+name
+
+createdAt
+
+Product
+
+name
+
+description
+
+price
+
+category
+
+rating
+
+image
+
+Chat
+
+userId
+
+messages [{ role, content, timestamp }]
+
+createdAt
+
+7️⃣ AI Agent Responsibilities
+
+The AI agent must:
+
+Understand user intent (budget, category, preferences)
+
+Recommend products from provided list
+
+Explain why each product is recommended
+
+Be deterministic and structured (JSON output)
+
+Never hallucinate products not provided
+
+Example AI Input
+{
+  "userMessage": "I want headphones under $500 for work",
+  "products": [...]
+}
+Example AI Output
+{
+  "reply": "Here are the best options for your needs.",
+  "recommendations": [
+    {
+      "productId": "p2",
+      "reason": "Excellent noise cancellation and comfort"
+    }
+  ]
+}
+8️⃣ Environment Variables
+Backend
+MONGODB_URI=
+JWT_SECRET=
+CLIENT_URL=
+PYTHON_AI_URL=
+AI Service
+GROQ_API_KEY=
+9️⃣ Code Quality Requirements
+
+Clean folder structure
+
+Reusable components
+
+Custom hooks for API calls
+
+Centralized error handling
+
+Comments only where necessary
+
+No unnecessary complexity
+
+🔟 Final Output Expectation
+
+Generate:
+
+Full frontend code
+
+Full backend code
+
+Full AI agent code
+
+README with setup instructions
+
+Clear run commands for frontend, backend, AI service
+
+The project should be demo-ready, portfolio-worthy, and easy to extend.

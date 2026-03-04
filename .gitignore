@@ -1,0 +1,27 @@
+# Environment variables
+.env
+*/.env
+ai_agent/.env
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Build outputs
+dist/
+build/
+*.exe
+*.dll
+*.so
+
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1313ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>ShopAI - Your Personal Shopping Assistant</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<!-- Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white">
+<span class="material-symbols-outlined">shopping_cart_checkout</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">ShopAI</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors" href="#">Products</a>
+<a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors" href="#">AI Assistant</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="hidden sm:flex px-4 py-2 text-sm font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all">
+                        Login
+                    </button>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-lg shadow-primary/20 transition-all">
+                        Get Started
+                    </button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="mx-auto max-w-7xl px-6 py-16 md:py-24">
+<div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+<div class="flex flex-col gap-8">
+<div class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary dark:bg-primary/20 uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                            Next-Gen E-Commerce
+                        </div>
+<h1 class="text-5xl font-extrabold leading-[1.1] tracking-tight text-slate-900 dark:text-white md:text-6xl">
+                            Shop Smarter with an <span class="text-primary">AI Shopping</span> Assistant
+                        </h1>
+<p class="text-lg leading-relaxed text-slate-600 dark:text-slate-400 max-w-xl">
+                            Discover the best products with natural language search and AI-driven recommendations. Personalized shopping, simplified.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<button class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl text-base font-bold shadow-xl shadow-primary/25 transition-all">
+<span class="material-symbols-outlined">forum</span>
+                                Ask AI to Help Me Shop
+                            </button>
+<button class="flex items-center gap-2 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 bg-white dark:bg-background-dark px-8 py-4 rounded-xl text-base font-bold transition-all">
+                                Browse Products
+                            </button>
+</div>
+<div class="flex items-center gap-4 text-sm text-slate-500">
+<div class="flex -space-x-2">
+<div class="h-8 w-8 rounded-full border-2 border-background-light bg-slate-200 dark:border-background-dark" data-alt="User avatar placeholder profile one"></div>
+<div class="h-8 w-8 rounded-full border-2 border-background-light bg-slate-300 dark:border-background-dark" data-alt="User avatar placeholder profile two"></div>
+<div class="h-8 w-8 rounded-full border-2 border-background-light bg-slate-400 dark:border-background-dark" data-alt="User avatar placeholder profile three"></div>
+</div>
+<span>Joined by 10k+ shoppers this month</span>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary/20 to-transparent blur-2xl"></div>
+<div class="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xl shadow-primary/10 aspect-video lg:aspect-square flex items-center justify-center" data-alt="AI Shopping Interface dashboard visualization">
+<div class="p-8 w-full h-full flex flex-col gap-4">
+<div class="h-8 w-2/3 bg-slate-100 dark:bg-slate-800 rounded-lg"></div>
+<div class="flex gap-4">
+<div class="h-32 w-1/2 bg-primary/5 rounded-xl border border-primary/10"></div>
+<div class="h-32 w-1/2 bg-slate-50 dark:bg-slate-800/50 rounded-xl"></div>
+</div>
+<div class="h-24 w-full bg-slate-50 dark:bg-slate-800/50 rounded-xl"></div>
+<div class="mt-auto flex items-center gap-3 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700">
+<div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">mic</span>
+</div>
+<div class="text-sm font-medium text-slate-400 italic">"Find me the best wireless headphones for under $200..."</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Categories -->
+<section class="bg-white dark:bg-background-dark/50 py-20">
+<div class="mx-auto max-w-7xl px-6">
+<div class="mb-12 flex items-end justify-between">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Product Categories</h2>
+<p class="mt-2 text-slate-500 dark:text-slate-400">Explore curated collections for every need.</p>
+</div>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:underline" href="#">
+                            View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-6">
+<!-- Category Card 1 -->
+<div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer transition-transform hover:-translate-y-1">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-slate-200 dark:bg-slate-800" data-alt="High tech electronics devices category image"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<p class="text-lg font-bold text-white">Electronics</p>
+<p class="text-xs text-slate-300">1.2k+ Products</p>
+</div>
+</div>
+<!-- Category Card 2 -->
+<div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer transition-transform hover:-translate-y-1">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-slate-300 dark:bg-slate-700" data-alt="Modern home and living interior design items"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<p class="text-lg font-bold text-white">Home &amp; Living</p>
+<p class="text-xs text-slate-300">800+ Products</p>
+</div>
+</div>
+<!-- Category Card 3 -->
+<div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer transition-transform hover:-translate-y-1">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-slate-200 dark:bg-slate-800" data-alt="Stylish fashion and apparel category image"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<p class="text-lg font-bold text-white">Fashion</p>
+<p class="text-xs text-slate-300">2.5k+ Products</p>
+</div>
+</div>
+<!-- Category Card 4 -->
+<div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer transition-transform hover:-translate-y-1">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-slate-300 dark:bg-slate-700" data-alt="Beauty and self-care products category image"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<p class="text-lg font-bold text-white">Beauty</p>
+<p class="text-xs text-slate-300">600+ Products</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Items Section -->
+<section class="mx-auto max-w-7xl px-6 py-20">
+<div class="mb-12 flex items-center justify-between">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Trending Items</h2>
+<p class="mt-2 text-slate-500 dark:text-slate-400">The most popular products recommended by our AI this week.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+<!-- Product 1 -->
+<div class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 transition-all hover:shadow-xl hover:shadow-primary/5">
+<div class="relative mb-4 aspect-square overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-800/50" data-alt="Premium wireless noise cancelling headphones">
+<button class="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 dark:bg-slate-700/80 text-slate-600 dark:text-white backdrop-blur shadow-sm hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">Electronics</span>
+<h3 class="font-bold text-slate-900 dark:text-white">Studio Pro Headphones</h3>
+<div class="flex items-center gap-1">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500">4.9 (128 reviews)</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-lg font-bold text-slate-900 dark:text-white">$299.00</span>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 transition-all hover:shadow-xl hover:shadow-primary/5">
+<div class="relative mb-4 aspect-square overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800/50" data-alt="Minimalist design ceramic coffee mug set">
+<button class="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 dark:bg-slate-700/80 text-slate-600 dark:text-white backdrop-blur shadow-sm hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">Home</span>
+<h3 class="font-bold text-slate-900 dark:text-white">Artisan Mug Set</h3>
+<div class="flex items-center gap-1">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500">4.7 (85 reviews)</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-lg font-bold text-slate-900 dark:text-white">$45.00</span>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 transition-all hover:shadow-xl hover:shadow-primary/5">
+<div class="relative mb-4 aspect-square overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-800/50" data-alt="High performance smart watch with fitness tracking">
+<button class="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 dark:bg-slate-700/80 text-slate-600 dark:text-white backdrop-blur shadow-sm hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">Electronics</span>
+<h3 class="font-bold text-slate-900 dark:text-white">ActivePro Watch 5</h3>
+<div class="flex items-center gap-1">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500">4.8 (240 reviews)</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-lg font-bold text-slate-900 dark:text-white">$199.00</span>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 transition-all hover:shadow-xl hover:shadow-primary/5">
+<div class="relative mb-4 aspect-square overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800/50" data-alt="Sustainable cotton casual t-shirt">
+<button class="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 dark:bg-slate-700/80 text-slate-600 dark:text-white backdrop-blur shadow-sm hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">Fashion</span>
+<h3 class="font-bold text-slate-900 dark:text-white">Organic Cotton Tee</h3>
+<div class="flex items-center gap-1">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+</div>
+<span class="text-xs font-medium text-slate-500">4.6 (56 reviews)</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-lg font-bold text-slate-900 dark:text-white">$32.00</span>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter/CTA Section -->
+<section class="mx-auto max-w-7xl px-6 pb-20">
+<div class="rounded-3xl bg-primary px-8 py-12 md:py-16 text-center text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full -ml-20 -mb-20 blur-3xl"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="text-3xl font-bold md:text-4xl">Experience the future of shopping</h2>
+<p class="mt-4 text-primary-20 opacity-90">Join thousands of smart shoppers who save time and money with our AI assistant.</p>
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+<input class="w-full sm:w-auto min-w-[300px] px-6 py-4 rounded-xl border-none text-slate-900 focus:ring-2 focus:ring-white" placeholder="Enter your email" type="email"/>
+<button class="w-full sm:w-auto bg-white text-primary hover:bg-slate-100 px-8 py-4 rounded-xl font-bold transition-all">
+                                Get Started Free
+                            </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark py-12">
+<div class="mx-auto max-w-7xl px-6">
+<div class="grid grid-cols-1 gap-12 lg:grid-cols-4 md:grid-cols-2">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-base">shopping_cart_checkout</span>
+</div>
+<span class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">ShopAI</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                            Revolutionizing e-commerce with artificial intelligence to help you find exactly what you need.
+                        </p>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Product</h4>
+<ul class="flex flex-col gap-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Categories</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Trending Now</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">New Arrivals</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Discounts</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Company</h4>
+<ul class="flex flex-col gap-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">AI Assistant</h4>
+<ul class="flex flex-col gap-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">How it works</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chat Interface</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Recommendations</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Login</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-400">© 2024 ShopAI Platform Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

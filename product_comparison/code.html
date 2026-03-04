@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1313ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>AI Shopper | Product Comparison</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 md:px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">smart_toy</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">AI Shopper</h2>
+</div>
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-500 flex border-none bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg" data-icon="search">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-0 h-full placeholder:text-slate-500 px-4 rounded-r-lg pl-2 text-sm font-normal" placeholder="Compare items..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-8">
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Products</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">AI Assistant</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary/10 border-2 border-primary/20 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtSwIUcYNDw0In2RK4vSGhsy3jeHnLHqEOxb9QMF9Wpgnu3BiXxZEDHSSMPQxzReUG-JCsPVqoqFm_PHDAh5k7i-Zy3rT9tC7ruuZp0erTnUyq_QBVyAXRlaVDGJivBUdcRNnzVHNVLyzpbXNE7oKgd63_tZrJIf0NuaHyx_Qlag5HOAzldthtSaVB28EIQ9UYd4IckS0vSvWciojyXdo5jTfk7mLac_nh5JrA0L5AMdkj5R64TaA04YZEVTmLxJhGhxyji_flnco"/>
+</div>
+</div>
+</div>
+</header>
+<main class="mx-auto w-full max-w-[1280px] px-4 md:px-10 py-8">
+<nav class="flex items-center gap-2 mb-6 text-sm">
+<a class="text-slate-500 hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-xs text-slate-400">chevron_right</span>
+<a class="text-slate-500 hover:text-primary" href="#">Laptops</a>
+<span class="material-symbols-outlined text-xs text-slate-400">chevron_right</span>
+<span class="text-slate-900 dark:text-slate-100 font-semibold">Product Comparison</span>
+</nav>
+<div class="mb-10">
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl font-black leading-tight tracking-[-0.033em] mb-2">Detailed Comparison</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg">We've analyzed 3 candidates based on your workflow requirements.</p>
+</div>
+<div class="mb-12">
+<div class="relative overflow-hidden rounded-xl border border-primary/20 bg-white dark:bg-slate-900 p-1 shadow-xl shadow-primary/5">
+<div class="flex flex-col md:flex-row items-center gap-6 p-6 rounded-lg bg-gradient-to-br from-primary/5 to-transparent">
+<div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-3xl">auto_awesome</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-primary text-[10px] font-bold text-white uppercase tracking-wider">AI Recommendation</span>
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold">Laptop Pro X is your best match</h3>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                                    Based on your preference for <span class="text-primary font-semibold">heavy video editing</span> and <span class="text-primary font-semibold">frequent travel</span>, the Laptop Pro X wins. Its M3 Max chip offers 35% faster rendering than competitors, and the 22-hour battery life ensures you stay productive during long flights.
+                                </p>
+</div>
+<div class="flex gap-3">
+<button class="whitespace-nowrap rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-primary/90 transition-all shadow-md">
+                                    Get This Deal
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50">
+<th class="p-6 w-1/4 border-b border-slate-200 dark:border-slate-800">
+<span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Specifications</span>
+</th>
+<th class="p-6 w-1/4 border-b border-slate-200 dark:border-slate-800 relative">
+<div class="absolute -top-1 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase">Winner</div>
+<div class="flex flex-col items-center gap-4">
+<div class="w-32 h-32 rounded-lg bg-slate-100 dark:bg-slate-800 overflow-hidden border border-primary/20">
+<img class="w-full h-full object-cover" data-alt="MacBook Pro style laptop product shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9cOkRJ5XkyftA9Iio3nNChUtxK1INU9xAhoy3HAQOu22050J4nUSFYyGoNyk8xfp3CT4XXf0Mr6x9DquNl49vEQY-HxOx3-2k0Z7DnEecGpmARlAQrVuPnErgagEDq4-F-7eprAwu7rRI3hgLis9qHhmjjcyAvzQleVsomr0H6G--t59iLSpvcdJpHHbqe3hmqHG20TXp3PXZu7ytDncRe098879OIHdF784RBBaJW9UYewIo9s_SLYfAyTQko0U2I4Z2F_eLf-c"/>
+</div>
+<div class="text-center">
+<p class="font-bold text-slate-900 dark:text-slate-100">Laptop Pro X</p>
+<p class="text-primary font-black text-xl">$1,299</p>
+</div>
+</div>
+</th>
+<th class="p-6 w-1/4 border-b border-slate-200 dark:border-slate-800">
+<div class="flex flex-col items-center gap-4">
+<div class="w-32 h-32 rounded-lg bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Slim silver ultrabook product shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp3CvVsN-QUNdRycwBYV7CIdZ_HXATtQO5OLtNon2Gh1gHuukVjvwCp-GhZx_QIF_E8eWI4Q7ACOWUbHLk-ZQ_QyDUTRiIo_a7pdpRToBTeDHXD6GQPOGSV7U0LzzuTfZ8NNs8dMG68xd45jiKwTZ0cDoPzFEANVa3b1fID3mRa9ybNp-tLeYVgltBXvbXMMlvzkvsVeSCx3F_Y5R0HvC6-6JW0q0acnjm8G_2fd4tGl5buFmI18XltAh6scLavBkE6ABcT661gVA"/>
+</div>
+<div class="text-center">
+<p class="font-bold text-slate-900 dark:text-slate-100">UltraBook Gen 2</p>
+<p class="text-slate-500 font-bold text-xl">$1,150</p>
+</div>
+</div>
+</th>
+<th class="p-6 w-1/4 border-b border-slate-200 dark:border-slate-800">
+<div class="flex flex-col items-center gap-4">
+<div class="w-32 h-32 rounded-lg bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Powerful dark gray workstation laptop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCya9ECTQyId_QHorbSwUq15QLFjT0F_oJv5BgeKtQml5Eu6BGZR91Sh0s8RsdR0KOHabI_u8ZVNWsIXT8nva1LHMxjZndFjQd69J6sl1U7CoCRHi0p1Jl6YBS9Iac4bfyfiOBMn_ZcInHeYXd9Rs_kZyHx5Qmibfs4bT4Rzf5I0zGfYrmPsIidKqSC7IIFYGQ0xR9tWJuNQCCtfoImirTnku3z9JJnRFtiOPC4GcfmOenk9nTHh2EaKudtRvfilCO3troMxdjLu9M"/>
+</div>
+<div class="text-center">
+<p class="font-bold text-slate-900 dark:text-slate-100">PowerStation 14</p>
+<p class="text-slate-500 font-bold text-xl">$1,400</p>
+</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="p-6 font-semibold text-slate-500 dark:text-slate-400">Processor</td>
+<td class="p-6 text-slate-900 dark:text-slate-100 font-medium bg-primary/5">Apple M3 Max (14-core)</td>
+<td class="p-6 text-slate-600 dark:text-slate-300">Intel Core i7-1355U</td>
+<td class="p-6 text-slate-600 dark:text-slate-300">AMD Ryzen 9 7940HS</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold text-slate-500 dark:text-slate-400">Memory (RAM)</td>
+<td class="p-6 text-slate-900 dark:text-slate-100 font-medium bg-primary/5">36GB Unified Memory</td>
+<td class="p-6 text-slate-600 dark:text-slate-300">16GB DDR5</td>
+<td class="p-6 text-slate-600 dark:text-slate-300">32GB LPDDR5x</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold text-slate-500 dark:text-slate-400">Display</td>
+<td class="p-6 text-slate-900 dark:text-slate-100 font-medium bg-primary/5">14.2" Liquid Retina XDR</td>
+<td class="p-6 text-slate-600 dark:text-slate-300">13.5" OLED 2.8K</td>
+<td class="p-6 text-slate-600 dark:text-slate-300">14" IPS QHD 165Hz</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold text-slate-500 dark:text-slate-400">Battery Life</td>
+<td class="p-6 text-slate-900 dark:text-slate-100 font-medium bg-primary/5">Up to 22 hours</td>
+<td class="p-6 text-slate-600 dark:text-slate-300">Up to 12 hours</td>
+<td class="p-6 text-slate-600 dark:text-slate-300">Up to 10 hours</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold text-slate-500 dark:text-slate-400">Weight</td>
+<td class="p-6 text-slate-900 dark:text-slate-100 font-medium bg-primary/5">3.4 lbs (1.55 kg)</td>
+<td class="p-6 text-slate-600 dark:text-slate-300">2.6 lbs (1.18 kg)</td>
+<td class="p-6 text-slate-600 dark:text-slate-300">3.8 lbs (1.72 kg)</td>
+</tr>
+<tr class="align-top">
+<td class="p-6 font-semibold text-slate-500 dark:text-slate-400">Pros &amp; Cons</td>
+<td class="p-6 bg-primary/5">
+<div class="space-y-4">
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-emerald-600 dark:text-emerald-400 text-sm">
+<span class="material-symbols-outlined text-sm mt-0.5">check_circle</span>
+                                                Best-in-class performance
+                                            </li>
+<li class="flex items-start gap-2 text-emerald-600 dark:text-emerald-400 text-sm">
+<span class="material-symbols-outlined text-sm mt-0.5">check_circle</span>
+                                                Incredible battery life
+                                            </li>
+</ul>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-rose-500 dark:text-rose-400 text-sm">
+<span class="material-symbols-outlined text-sm mt-0.5">cancel</span>
+                                                Premium price point
+                                            </li>
+</ul>
+</div>
+</td>
+<td class="p-6">
+<div class="space-y-4">
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-emerald-600 dark:text-emerald-400 text-sm">
+<span class="material-symbols-outlined text-sm mt-0.5">check_circle</span>
+                                                Ultra-lightweight
+                                            </li>
+</ul>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-rose-500 dark:text-rose-400 text-sm">
+<span class="material-symbols-outlined text-sm mt-0.5">cancel</span>
+                                                Mediocre performance
+                                            </li>
+<li class="flex items-start gap-2 text-rose-500 dark:text-rose-400 text-sm">
+<span class="material-symbols-outlined text-sm mt-0.5">cancel</span>
+                                                Limited ports
+                                            </li>
+</ul>
+</div>
+</td>
+<td class="p-6">
+<div class="space-y-4">
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-emerald-600 dark:text-emerald-400 text-sm">
+<span class="material-symbols-outlined text-sm mt-0.5">check_circle</span>
+                                                Great for gaming
+                                            </li>
+</ul>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-rose-500 dark:text-rose-400 text-sm">
+<span class="material-symbols-outlined text-sm mt-0.5">cancel</span>
+                                                Heavy &amp; bulky
+                                            </li>
+<li class="flex items-start gap-2 text-rose-500 dark:text-rose-400 text-sm">
+<span class="material-symbols-outlined text-sm mt-0.5">cancel</span>
+                                                Loud cooling fans
+                                            </li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td class="p-6"></td>
+<td class="p-6 bg-primary/5">
+<button class="w-full py-2 bg-primary text-white text-sm font-bold rounded hover:opacity-90">Select Laptop Pro</button>
+</td>
+<td class="p-6">
+<button class="w-full py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm font-bold rounded hover:bg-slate-200 dark:hover:bg-slate-700">Select UltraBook</button>
+</td>
+<td class="p-6">
+<button class="w-full py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm font-bold rounded hover:bg-slate-200 dark:hover:bg-slate-700">Select PowerStation</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-12 p-8 rounded-xl bg-slate-900 text-white overflow-hidden relative">
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-xl">
+<h3 class="text-2xl font-bold mb-3">Still not sure?</h3>
+<p class="text-slate-300">Chat with our AI Assistant to get personalized advice tailored to your specific budget and creative tools.</p>
+</div>
+<button class="flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">forum</span>
+                            Start AI Chat
+                        </button>
+</div>
+<!-- Decorative background elements -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl -ml-16 -mb-16"></div>
+</div>
+</main>
+<footer class="mt-auto border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-10 px-4 md:px-10">
+<div class="mx-auto max-w-[1280px] flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-sm font-medium">© 2024 AI Shopper Platform. Data-driven choices.</span>
+</div>
+<div class="flex gap-8">
+<a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

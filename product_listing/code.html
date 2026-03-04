@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>E-Commerce Product Listing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1313ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-16 items-center justify-between gap-8">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="p-2 bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined block">shopping_bag</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">MarketSync</span>
+</div>
+<!-- Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-primary" href="#">Products</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">AI Assistant</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Solutions</a>
+</nav>
+<!-- Search & Profile -->
+<div class="flex flex-1 items-center justify-end gap-4">
+<div class="hidden lg:block w-full max-w-sm">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search components..." type="text"/>
+</div>
+</div>
+<button class="relative p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<div class="h-10 w-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="h-full w-full object-cover" data-alt="User profile avatar illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVjtpNQ1DeiMWeWAUMTI-QAtRAEeaxGY1MD6oBlB70Lj3jwJLNNsCAf6GtJqck8mi49eXJNhDFmEHCLofby85BGc6VM0PiSziEmXuchHueuzY8fBAO_UueH_QrUMmdQQE3FC4d4w3UBbv-NHyukrEWPMJbPFKNo_1qGcLK03G3n-03Raq0R1A7TP7-zyHYIJF93ZZrccDJRA_CObQd_5ODWB8tS6s0Z4enVbPREANdPrVodic8-pdAF5Xf9yq925_Q82kwDGk4j2w"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 flex-shrink-0 space-y-8">
+<div>
+<h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-4">Category</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-2 rounded-lg bg-primary/5 text-primary font-medium cursor-pointer">
+<span class="material-symbols-outlined text-lg">category</span>
+<span class="text-sm">All Electronics</span>
+</label>
+<label class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-lg">laptop_mac</span>
+<span class="text-sm">Computers</span>
+</label>
+<label class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-lg">smartphone</span>
+<span class="text-sm">Mobile Devices</span>
+</label>
+<label class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-lg">headphones</span>
+<span class="text-sm">Accessories</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-4">Price Range</h3>
+<div class="px-2">
+<input class="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary" type="range"/>
+<div class="flex justify-between mt-3 text-xs font-medium text-slate-500">
+<span>$0</span>
+<span>$5,000+</span>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-4">Brand</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-100 transition-colors">Apple Inc.</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-100 transition-colors">Samsung</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-100 transition-colors">Logitech</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-100 transition-colors">Sony</span>
+</label>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1">
+<!-- Toolbar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 bg-white dark:bg-slate-900/50 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+<div>
+<h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Premium Tech</h1>
+<p class="text-sm text-slate-500">Showing 24 products</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative inline-block text-left">
+<select class="appearance-none bg-slate-100 dark:bg-slate-800 border-none rounded-lg py-2 pl-4 pr-10 text-sm font-medium focus:ring-2 focus:ring-primary/20 cursor-pointer">
+<option>Sort by: Newest</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Top Rated</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+<div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg">
+<button class="p-1.5 bg-white dark:bg-slate-700 rounded shadow-sm text-primary">
+<span class="material-symbols-outlined block text-xl">grid_view</span>
+</button>
+<button class="p-1.5 text-slate-400">
+<span class="material-symbols-outlined block text-xl">view_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-end noise canceling wireless headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNgiTchCK8yM5d3yDUzqwCCBvC2MLeK4UZtxzqdOeLhoHGSP1cCfkQhFReyT1MJg5D1hND2QM4A-inU86JE9uf3eHUjt-FpIP7prISsRGcc1psW-QYF2OEetTSvGnMSJiEkAQO48qR-yOBsv606T6dBjC2l9GiTq05F_nDnyT64csQjyRrVa07Q5zNIeEz7waYC6CsvjiMoqQfPG_6KuHfFOgJjzki6auiv8GhluRXRNy9Ul8VEiLYPmIn2--ihdOaCkPbGp78Zq8"/>
+<button class="absolute top-3 right-3 p-2 bg-white/90 dark:bg-slate-900/90 rounded-full shadow-md text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-amber-400 text-sm FILL-1">star</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">4.9</span>
+<span class="text-xs text-slate-400">(128 reviews)</span>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">SonicPro Wireless Headphones</h3>
+<p class="text-xs text-slate-500 mb-4">Space Gray • Noise Cancelling</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-xl font-black text-slate-900 dark:text-slate-100">$299.00</span>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors">View Details</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist luxury wristwatch with white face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGZ3DBB9llXZewE7EUOb5rDAZO4ieR5jNNvzsbhH_Pp0drPpCHEv8ZT2sI2mcVaMljgaT7F3dYPOLcH9lceW8TiHM4zDv4ZA6Fa8CC46gbKT4Z5qnHgeUGndhDYeuuEoS84nK0iZ_jplAceMGn8OJHYhggtDjLHIRevpiG8x6VgOr6gd0BWaIDJi1B_7xNXnW5SJJ5JblXFchck_UHB2J7tXtvSaGEMwKDyrsLX7CsyAWfKpo7gOzAWCFVEETRUkzbNwJET4y_XRQ"/>
+<button class="absolute top-3 right-3 p-2 bg-white/90 dark:bg-slate-900/90 rounded-full shadow-md text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-amber-400 text-sm FILL-1">star</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">4.7</span>
+<span class="text-xs text-slate-400">(85 reviews)</span>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Minimalist Quartz Watch</h3>
+<p class="text-xs text-slate-500 mb-4">Silver Mesh • Sapphire Crystal</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-xl font-black text-slate-900 dark:text-slate-100">$185.00</span>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors">View Details</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Retro style polaroid instant camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaNlOSyzLHC94oxsFVvFkyQNKJAZ10_bUtGeBFwPFyuSarh7ddYGQpl1nx50075dYeJYUeBxXVbMx2uJ7SP2BYdb5Rza3r7IVVrcdbKJ4GMwENAVMVUfIWBbfD0VWWhagIBrL9ERFgO73i147s6bYo3nxnsyjUnHq8L4O3SXt7HFRD8nnvBDy4QeQ9DasfSn_02qt5b50WKvnH3RRqmUWqO_JuKlLXN5tLkZsiysIojA1aY6DpfSgGvod8wlaJ_8ocayX6MVCqz7w"/>
+<button class="absolute top-3 right-3 p-2 bg-white/90 dark:bg-slate-900/90 rounded-full shadow-md text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">New</div>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-amber-400 text-sm FILL-1">star</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">4.8</span>
+<span class="text-xs text-slate-400">(52 reviews)</span>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Instant Film Camera X2</h3>
+<p class="text-xs text-slate-500 mb-4">Vintage Blue • Auto-Focus</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-xl font-black text-slate-900 dark:text-slate-100">$129.99</span>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors">View Details</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Elegant silver smart watch with brown leather strap" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoB7av3_aPdsD1vNWXU_fEOeG6WLTttW1MUePTsd1jgHIs8ciMIjYUU2pZz2EZ6HeOgHL94NIJzdQ3QDt0Y3CLHkM_KVTaNVZskjkoKsv6iQBap3pbAnzpRysJXnfW_biKx1Jwhk7S-14YeTOczH-O7Y4g0pNDtwDbunKGhyWoI9tT4xOQ9fUjEUSMAB-Iuy179AiJuTD5p_Q4FqWtpxz6Jd3UPS0rhNxQvPgCVmv7BjFKpH2oZ0nY0n2tm1uY_WNvsMjchTR2qqM"/>
+<button class="absolute top-3 right-3 p-2 bg-white/90 dark:bg-slate-900/90 rounded-full shadow-md text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-amber-400 text-sm FILL-1">star</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">4.6</span>
+<span class="text-xs text-slate-400">(210 reviews)</span>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Zenith Smart Watch Pro</h3>
+<p class="text-xs text-slate-500 mb-4">Titanium • Leather Strap</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-xl font-black text-slate-900 dark:text-slate-100">$399.00</span>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors">View Details</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High tech wireless computer mouse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAReWetERnZVJzLJhbD5VMdYVJHMR5mMTxXsvyVL05OQZ_48fC4IyxSu6-KbiKT08heRuB69h8SF9vSMaqhKtTDguTqNsPYcx0Pke-uBZ2e_J0q_ryOKcUZNtsBbDH7tA1qlfPA1srC8dBNfOUkcuXkn5n_rydNSAKeiCeDivFRi2wYPGr0DkA7_OILCQhSUgzuiZr9p8r6anQlX_VPSxBEiwrKehbSOiJDs3LB3_kJnMW3Hc3a5O1ZEKbVsM7TMCddSLKjmUVD0Kk"/>
+<button class="absolute top-3 right-3 p-2 bg-white/90 dark:bg-slate-900/90 rounded-full shadow-md text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-amber-400 text-sm FILL-1">star</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">4.9</span>
+<span class="text-xs text-slate-400">(342 reviews)</span>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">ErgoFlow Wireless Mouse</h3>
+<p class="text-xs text-slate-500 mb-4">Ergonomic • 8000 DPI</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-xl font-black text-slate-900 dark:text-slate-100">$89.00</span>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors">View Details</button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sleek aluminum laptop on desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5n15sOpeGOz_R7I_Re8GGBllcdVNYXTVxxVan6-QvRM0ugontCZqAsfFhEPZsavUsHsTN-88LhuGo1G8N9c3nxb7uoyulvkB0NIPFdSVqn0BHW8I36qLFxGappwDrPdGjgQCGzzhOs5diwu5dlLPB39PZ2nYlIP4BNEFTkrvrfepkaMN_uIbakuWRRRY1oURVjTzyx9tj2DLtAdDZCXx88EpEvLYd1YyFrbhKDDj5C-u60qDyn8UPHCbnyHgM9BEUjopFtB2jddU"/>
+<button class="absolute top-3 right-3 p-2 bg-white/90 dark:bg-slate-900/90 rounded-full shadow-md text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Sale -15%</div>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-amber-400 text-sm FILL-1">star</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">4.5</span>
+<span class="text-xs text-slate-400">(15 reviews)</span>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Nexus Ultra-Thin Laptop</h3>
+<p class="text-xs text-slate-500 mb-4">16GB RAM • 512GB SSD</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 line-through">$1,299</span>
+<span class="text-xl font-black text-slate-900 dark:text-slate-100">$1,099</span>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors">View Details</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex items-center justify-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">3</button>
+<span class="text-slate-400 px-2">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+<div class="col-span-2">
+<div class="flex items-center gap-2 mb-4">
+<div class="p-1.5 bg-primary rounded text-white">
+<span class="material-symbols-outlined text-sm block">shopping_bag</span>
+</div>
+<span class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">MarketSync</span>
+</div>
+<p class="text-sm text-slate-500 max-w-xs">Curating the world's most innovative hardware for professionals and enthusiasts alike.</p>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-4">Resources</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Guides</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-4">Company</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-400">© 2024 MarketSync Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-lg">mail</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-lg">forum</span></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
