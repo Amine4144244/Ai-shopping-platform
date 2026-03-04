@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { API_URL } from '../config';
 
 function Marketplace() {
     const [search, setSearch] = useState('');
@@ -9,7 +10,7 @@ function Marketplace() {
 
     useEffect(() => {
         // Fetch some featured products
-        fetch('http://localhost:5000/api/products?limit=4')
+        fetch(`${API_URL}/api/products?limit=4`)
             .then(res => res.json())
             .then(data => setProducts(data.slice(0, 4)))
             .catch(err => console.error(err));

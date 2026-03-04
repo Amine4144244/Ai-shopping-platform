@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useStore } from '../store';
+import { API_URL } from '../config';
 
 function AIAssistant() {
     const { user } = useStore();
@@ -13,7 +14,7 @@ function AIAssistant() {
 
     useEffect(() => {
         // Initial fetch of products to send to the AI for recommendation context
-        fetch('http://localhost:5000/api/products')
+        fetch(`${API_URL}/api/products`)
             .then(res => res.json())
             .then(data => setProducts(data))
             .catch(console.error);
@@ -44,11 +45,11 @@ function AIAssistant() {
             // Determine if they are asking for recommendations or general chat
             const isRecommendation = userMsg.toLowerCase().includes('recommend') || userMsg.toLowerCase().includes('suggest') || userMsg.toLowerCase().includes('find');
 
-            let endpoint = 'http://localhost:5000/api/ai/chat';
+            let endpoint = `${API_URL}/api/ai/chat`;
             let payload = { message: userMsg, history: messages.filter(m => !m.recommendations) };
 
             if (isRecommendation && products.length > 0) {
-                endpoint = 'http://localhost:5000/api/ai/recommend';
+                endpoint = `${API_URL}/api/ai/recommend`;
                 payload = { userMessage: userMsg, products: products };
             }
 
@@ -74,7 +75,6 @@ function AIAssistant() {
                 }]);
             }
 
-            // If user is logged in, perhaps save chat to backend (optional for now based on complexity)
         } catch (err) {
             console.error(err);
             setMessages([...newMessages, { role: 'ai', content: "Sorry, I'm having trouble connecting right now." }]);

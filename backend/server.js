@@ -32,13 +32,23 @@ app.use('/api/ai', aiRoutes);
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/aishopping';
 
-mongoose.connect(MONGODB_URI)
-    .then(() => {
-        console.log('Connected to MongoDB');
-        app.listen(PORT, () => {
-            console.log(`Server running on port ${PORT}`);
+// Only connect and listen if we're not in a serverless environment
+// Vercel will handle the connection differently or we can connect in the handler
+if (process.env.NODE_ENV !== 'test') {
+    mongoose.connect(MONGODB_URI)
+        .then(() => {
+            console.log('Connected to MongoDB');
+            if (process.env.VERCEL) {
+                console.log('Running on Vercel');
+            } else {
+                app.listen(PORT, () => {
+                    console.log(`Server running on port ${PORT}`);
+                });
+            }
+        })
+        .catch((error) => {
+            console.error('MongoDB connection error:', error);
         });
-    })
-    .catch((error) => {
-        console.error('MongoDB connection error:', error);
-    });
+}
+
+module.exports = app;

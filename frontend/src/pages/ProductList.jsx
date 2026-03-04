@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import { API_URL } from '../config';
 
 function ProductList() {
     const [params] = useSearchParams();
@@ -14,7 +15,7 @@ function ProductList() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/categories')
+        fetch(`${API_URL}/api/categories`)
             .then(res => res.json())
             .then(data => setCategories(data))
             .catch(console.error);
@@ -22,7 +23,7 @@ function ProductList() {
 
     useEffect(() => {
         setLoading(true);
-        let url = `http://localhost:5000/api/products?`;
+        let url = `${API_URL}/api/products?`;
         if (selectedCategory) url += `category=${encodeURIComponent(selectedCategory)}&`;
         if (search) url += `search=${encodeURIComponent(search)}&`;
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useStore } from '../store';
+import { API_URL } from '../config';
 
 function CartPage() {
     const { cart, removeFromCart, updateQuantity } = useStore();

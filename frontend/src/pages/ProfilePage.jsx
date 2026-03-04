@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
+import { API_URL } from '../config';
 
 function ProfilePage() {
     const { user, logout } = useStore();
@@ -8,7 +9,7 @@ function ProfilePage() {
 
     const handleLogout = async () => {
         try {
-            await fetch('http://localhost:5000/api/auth/logout', {
+            await fetch(`${API_URL}/api/auth/logout`, {
                 method: 'POST',
                 credentials: 'include'
             });
